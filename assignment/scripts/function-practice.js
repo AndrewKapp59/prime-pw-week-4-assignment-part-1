@@ -17,7 +17,7 @@ console.log('Q1 Test - should say "Hello World!"', hello());
 // 2. Function to return a personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 
-function helloName( name ) {
+function helloName(name) {
   return 'Hello, ' + name;
 }
 
@@ -27,12 +27,14 @@ console.log('Q2 Test -', helloName('Andrew'));
 
 // 3. Function to add two numbers together & return the result
 
-function addNumbers( firstNumber, secondNumber ) {
+function addNumbers(firstNumber, secondNumber) {
   // return firstNumber + secondNumber;
   return firstNumber + secondNumber;
 }
 
 console.log('Q3 Test A -', addNumbers(1, 2));
+
+// 3.B
 
 function addNumbers2() {
   let answer = 1 + 2;
@@ -43,13 +45,15 @@ console.log('Q3 Test B -', addNumbers2());
 
 // 4. Function to multiply three numbers & return the result
 
-function multiplyThree(firstNumber, secondNumber, thirdNumber){
+function multiplyThree(firstNumber, secondNumber, thirdNumber) {
   return firstNumber * secondNumber * thirdNumber;
 }
 
 console.log('Q4 Test A -', multiplyThree(1, 2, 3));
 
-function multiplyThree2(){
+// 4.B
+
+function multiplyThree2() {
   let answer = 1 * 2 * 3
   return answer;
 }
@@ -58,20 +62,22 @@ console.log('Q4 Test B -', multiplyThree2());
 
 // 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
-function isPositive( number ) {
-  if ( number > 0 ) {
+
+function isPositive(number) {
+  if (number > 0) {
     return true;
   }
   else {
     return false;
   }
 }
+
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
-console.log( 'isPositive - should say true', isPositive(3) );
-console.log( 'isPositive - should say false', isPositive(0) );
-console.log( 'isPositive - should say false', isPositive(-3) );
 
+console.log('isPositive - should say true', isPositive(3));
+console.log('isPositive - should say false', isPositive(0));
+console.log('isPositive - should say false', isPositive(-3));
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
@@ -79,7 +85,7 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 numberArray = [1, 2, 3];
 emptyArray = [];
 
-function getLast( array ) {
+function getLast(array) {
   if (array.length > 0) {
     return array[array.length - 1];
   }
@@ -91,11 +97,12 @@ function getLast( array ) {
 console.log('Q6 Test - A ', getLast(numberArray));
 console.log('Q6 Test - B ', getLast(emptyArray));
 
+// 6.B
 
 let numberArray2 = [1, 2, 3];
 let emptyArray2 = [];
 
-function getLast2( array, value ) {
+function getLast2(array, value) {
   array.push(value)
   if (array.length > 0) {
     return array[array.length - 1];
@@ -114,8 +121,8 @@ console.log('Q6 .push Test B -', getLast2(emptyArray2, 5));
 
 let nameArray = ['Dan', 'Joe', 'Jim', 'Bob'];
 
-function find( value, array ){
-  for( let i=0; i<array.length; i++ )
+function find(value, array){
+  for(let i=0; i<array.length; i++)
     if (array[i] === value) {
       return true;
     }
@@ -132,6 +139,7 @@ console.log('Q7 Test B -', find('Drew', nameArray));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
+
 function isFirstLetter(letter, string) {
   if (letter === string[0]) {
     return true;
@@ -140,17 +148,19 @@ function isFirstLetter(letter, string) {
     return false;
   }
 }
-console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
-console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
+console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
 
-function sumAll( array ) {
+function sumAll(array) {
   let sum = 0
   for (var i = 0; i < array.length; i++) {
     sum += array [i];
   }
+
   // TODO: loop to add items
+
   return sum;
 }
 
@@ -163,7 +173,7 @@ console.log('The sum of this array is', sumAll(numberArray));
 
 numberArray3 = [1, -1, 2, -2, 3, -3]
 
-function getPositives( array ){
+function getPositives(array) {
     let postiveArray = array.filter(num => num > -1);
     return postiveArray;
 }
@@ -186,3 +196,22 @@ function convert(mins) {
 
 console.log(five_mins,'minutes is equal to', convert(five_mins), 'seconds');
 // Result should me 300 seconds.
+
+//pofif = percentage_of_food_in_fridge
+
+function groceryShopping(pofif) {
+  if (pofif <= 25) {
+    return 'Go grocery shopping today';
+  }
+  else if (pofif > 25 && pofif <= 50) {
+    return 'Go grocery shopping in a few days';
+  }
+  else if (pofif > 50 && pofif <= 75) {
+    return 'Go grocery shopping next week'
+  }
+  else {
+    return 'You do not need to go grocery shopping for while';
+  }
+}
+
+console.log(groceryShopping(85));
