@@ -76,8 +76,8 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
 
-numberArray = [1, 3, 3]
-emptyArray = []
+numberArray = [1, 2, 3];
+emptyArray = [];
 
 function getLast( array ) {
   if (array.length > 0) {
@@ -92,8 +92,8 @@ console.log('Q6 Test - A ', getLast(numberArray));
 console.log('Q6 Test - B ', getLast(emptyArray));
 
 
-let numberArray2 = [1, 2, 3]
-let emptyArray2 = []
+let numberArray2 = [1, 2, 3];
+let emptyArray2 = [];
 
 function getLast2( array, value ) {
   array.push(value)
@@ -133,24 +133,56 @@ console.log('Q7 Test B -', find('Drew', nameArray));
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (letter === string[0]) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+
+function sumAll( array ) {
   let sum = 0
+  for (var i = 0; i < array.length; i++) {
+    sum += array [i];
+  }
   // TODO: loop to add items
   return sum;
 }
+
+console.log('The sum of this array is', sumAll(numberArray));
+
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+numberArray3 = [1, -1, 2, -2, 3, -3]
+
+function getPositives( array ){
+    let postiveArray = array.filter(num => num > -1);
+    return postiveArray;
+}
+
+console.log('The postive numbers in this array are', getPositives(numberArray3));
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+// I picked the problem that asks you to create a function that converts mins into secs.
+// I took the minute vaule and multiplied it by 60 because there are 60 seconds in a minute.
+
+let five_mins = 5;
+
+function convert(mins) {
+  return mins * 60;
+}
+
+console.log(five_mins,'minutes is equal to', convert(five_mins), 'seconds');
+// Result should me 300 seconds.
